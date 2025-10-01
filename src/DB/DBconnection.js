@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 export const checkDBconnection = async ()=>{
     try {
-        await mongoose.connect("mongodb://127.0.0.1:27017/saraha")
+        await mongoose.connect(process.env.URI_ONLINE)
         console.log("DB connected successfully");
         
     } catch (error) {
