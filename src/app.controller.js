@@ -4,9 +4,10 @@ import { userRouter } from "./modules/users/users.controller.js";
 import { globalErrorHandling } from "./utils/error/index.js";
 
 export const bootstrap = (app,express) => {
+    app.use(cors())
     checkDBconnection();
     app.use(express.json())
-
+    app.get('/', (req, res) => res.status(200).json('Welcome to our app => Saraha'))
     app.use("/users", userRouter)
     app.use("/messages", messageRouter)
 
