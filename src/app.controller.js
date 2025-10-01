@@ -2,7 +2,7 @@ import { checkDBconnection } from "./DB/DBconnection.js"
 import { messageRouter } from "./modules/messages/messages.controller.js";
 import { userRouter } from "./modules/users/users.controller.js";
 import { globalErrorHandling } from "./utils/error/index.js";
-
+import cors from 'cors'
 export const bootstrap = (app,express) => {
     app.use(cors())
     checkDBconnection();
