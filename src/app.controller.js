@@ -11,8 +11,8 @@ export const bootstrap = (app,express) => {
     app.use("/users", userRouter)
     app.use("/messages", messageRouter)
 
-    app.use("*",(req,res,next)=>{
-        return next(new Error(`Invalid url => ${req.originalUrl}`))
+    app.use(/(.*)/, (req,res,next) => {
+        return next(new Error(`Invalid URI => ${req.originalUrl}`))
     })
 
 
